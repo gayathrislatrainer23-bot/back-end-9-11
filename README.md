@@ -1,5 +1,5 @@
+Day-2
 27/10/2025
-
 1. Noidejs
  what is nodejs
  backend
@@ -26,5 +26,15 @@ db: store room
        * third party ---- express mongoose npm install
 
 4. fs module  -- write and read
-task to do --> append
+   task to do --> append
 
+Day-2
+28/10/2025
+why nodejs
+1. fast  and scaleable, non-blocking
+2. use single-threaded event loop --- learn concept 
+3. 
+
+1. path module
+3. Event-driven Architecture --  
+3. Event emitter
