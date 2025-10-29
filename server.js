@@ -6,7 +6,7 @@ const path = require('path')
 
 
 const server = http.createServer((req,res)=>{
-const fullpath = path.join(__dirname,"Fzdsgdzfb.txt")
+// const fullpath = path.join(__dirname, "files", "Fzdsgdzfb.txt");
 
 // res.writeHead(200,{"content-type" : "text/html"})
 // res.write("<h1>hello  <h1>")
@@ -20,19 +20,25 @@ const fullpath = path.join(__dirname,"Fzdsgdzfb.txt")
 //     }
 // })
 
-fs.readFile(fullpath,(err, data)=>{
-    if(err){
-        res.writeHead(404)
-        res.end(err)
-        console.log(err)
-    }else{
-res.writeHead(200,{"content-type" : "text/plain"})
-//   console.log(data)
-res.end(data)
-    }
-})
 
-})
+
+  const fullpath = path.join(__dirname, "Fzdsgdzfb.txt");
+  console.log("Full Path:", fullpath);
+
+  fs.readFile(fullpath, "utf8", (err, data) => {
+    if (err) {
+      res.writeHead(404, { "Content-Type": "text/plain" });
+      res.end("File not found");
+      console.error(err);
+    } else {
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.end(data);
+    }
+  });
+});
+
+
+
 const port = 5000
 server.listen(port, ()=>{
  console.log(` server running in the port ${port}`)

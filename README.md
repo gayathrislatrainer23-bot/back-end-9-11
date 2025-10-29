@@ -38,3 +38,10 @@ why nodejs
 1. path module
 3. Event-driven Architecture --  
 3. Event emitter
+
+
+Day-3
+29/10/2025
+REPL: READ EVAL PRINT LOOP
+CORS : MECHANISM CONTROLLING ACCESS TO RESOURCES FROM DIFFERENT ORIGINS.
+http and it's routing
