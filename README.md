@@ -45,3 +45,11 @@ Day-3
 REPL: READ EVAL PRINT LOOP
 CORS : MECHANISM CONTROLLING ACCESS TO RESOURCES FROM DIFFERENT ORIGINS.
 http and it's routing
+
+Day-4
+30/10/2025
+
+express - nodejs framwork
+json
+nodemon
+gitignore

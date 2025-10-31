@@ -1,52 +1,14 @@
-const http = require("http");
-const fs = require("fs");
-// const EventEmitter  = require("events");
-// const emitter = new  EventEmitter();
-const path = require('path')
+const express = require('express');
+const app = express ();
 
+app.use(express.json())
+// middleware  to parse json 
 
-const server = http.createServer((req,res)=>{
-// const fullpath = path.join(__dirname, "files", "Fzdsgdzfb.txt");
+app.get("/", (req,res)=>{
+    res.send("hello , express")
+})
+const PORT = 5000;
 
-// res.writeHead(200,{"content-type" : "text/html"})
-// res.write("<h1>hello  <h1>")
-// fs.writeFileSync('demo.html',"Hello node js" )
-// fs.readFile("./index.html", (err, data)=>{
-//     if(err){
-//         console.log(err)
-//     }else{
-// //   console.log(data)
-// res.end(data)
-//     }
-// })
-
-
-
-  const fullpath = path.join(__dirname, "Fzdsgdzfb.txt");
-  console.log("Full Path:", fullpath);
-
-  fs.readFile(fullpath, "utf8", (err, data) => {
-    if (err) {
-      res.writeHead(404, { "Content-Type": "text/plain" });
-      res.end("File not found");
-      console.error(err);
-    } else {
-      res.writeHead(200, { "Content-Type": "text/plain" });
-      res.end(data);
-    }
-  });
-});
-
-
-
-const port = 5000
-server.listen(port, ()=>{
- console.log(` server running in the port ${port}`)
-        
-    })
-    // emitter.on("greet",()=>{
-    //     console.log("hello from event")
-    // })
-    // emitter.emit("greet")
-    // const fullpath = path.join(__dirname,"Fzdsgdzfb.txt")
-    // console.log(fullpath)
+app.listen(PORT, ()=>{
+    console.log(`server is running ${PORT}`)
+})
