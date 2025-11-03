@@ -1,24 +1,27 @@
 const express = require('express');
 const app = express ();
 const  errorHandler= require("./middleware/errorHandler");
-const mongoose  = require('mongoose');
+const connectDB = require('./config/db');
+const StudentRoutes = require('./routes/studentRoutes')
 
 app.use(express.json())
 // middleware  to parse json 
 
 // connect mongodb
-mongoose.connect('mongodb://127.0.0.1:27017/backendDB')
-  .then(() => console.log('Connected!'))
-  .catch((err)=>console.error("mongodb connection failed"));
+connectDB()
 
-app.get('/test-error',(res,req,next)=>{
+app.get('/test-error',(req,res,next)=>{
     const err = new Error("test error")
     err.status = 400;
     next(err)
 })
-app.get("/", (req,res)=>{
-    res.send("hello , express")
-})
+// app.get("/", (req,res)=>{
+//     res.send("hello , express")
+// })
+
+
+// routes
+app.use('/students', StudentRoutes)
 
 
 app.use(errorHandler)

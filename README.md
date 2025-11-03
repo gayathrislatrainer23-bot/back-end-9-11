@@ -73,3 +73,8 @@ age : 23,
 }
 
 node + mpongdb => moogose module 
+
+Day-5
+3/10/2025
+mvc
+routing
