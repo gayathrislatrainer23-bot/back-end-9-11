@@ -53,3 +53,23 @@ express - nodejs framwork
 json
 nodemon
 gitignore
+
+Day-4
+31/10/2025
+
+ error handling
+mongodb : database
+          FEXIBLE structure
+          easy to understand
+          json formate
+
+students db
+similR TO JSON FORMATE 
+{
+name : "Manu",
+rollno : 345,
+age : 23,
+
+}
+
+node + mpongdb => moogose module 
