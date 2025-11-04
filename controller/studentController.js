@@ -4,13 +4,13 @@ const Student = require("../models/student")
 // get all students
 exports.getStudents = async (req,res,next) =>{
     try{
+console.log(" getStudents")
+    const students = await  Student.find()
 
-    const students = await  Student.findAll()
-
-    res.Status(200)
+    res.status(200)
         .json({
             sucess: true,
-            // data: students
+            data: students
         })
 
     }catch(err){
@@ -22,16 +22,19 @@ console.log(err.message)
 // create student
 exports.createStudents = async (req,res) =>{
     try{
+        console.log("createStudents")
+let {studentData }= req.body 
+   console.log("createStudents")
+    const students = await  Student.create(studentData)
 
-    const students = await  Student.create()
-
-    res.Status(200)
+    res.status(200)
         .json({
             sucess: true,
-            // data: students
+            students: students
         })
 
     }catch(err){
-console.log(err.message)
+        console.log(err.message)
+        next(err)
     }
 }
