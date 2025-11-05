@@ -38,3 +38,19 @@ let {studentData }= req.body
         next(err)
     }
 }
+exports.getStudentById = async (req,res)=>{
+     let studentId = req.params._id;
+try{
+
+    const student = await Student.findById(studentId ) 
+
+     res.status(200)
+        .json({
+            sucess: true,
+            student: student
+        })
+}catch(err){
+    next(err)
+}
+
+}

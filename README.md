@@ -78,3 +78,23 @@ Day-5
 3/10/2025
 mvc
 routing
+
+Day-6
+4/10/2025
+Api calling
+API testing by postMan
+
+
+Day-7
+5/10/2025
+API testing by postMan
+
+mongodb
+find();
+create()
+findById()
+find({name: req.body.name})
+
+task:
+attendance
+frondend and backend connect
