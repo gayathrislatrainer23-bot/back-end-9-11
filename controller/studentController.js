@@ -20,12 +20,12 @@ console.log(err.message)
 }
 
 // create student
-exports.createStudents = async (req,res) =>{
+exports.createStudents = async (req,res,next) =>{
     try{
         console.log("createStudents")
 let {studentData }= req.body 
-   console.log("createStudents")
-    const students = await  Student.create(studentData)
+const students = await  Student.create(studentData)
+console.log("createStudents",students)
 
     res.status(200)
         .json({
@@ -44,6 +44,24 @@ try{
 
     const student = await Student.findById(studentId ) 
 
+     res.status(200)
+        .json({
+            sucess: true,
+            student: student
+        })
+}catch(err){
+    next(err)
+}
+
+}
+
+exports.updateStudentById = async (req,res)=>{
+     let studentId = req.params._id;
+  let   {age} = req.body
+try{
+
+    const student = await Student.findByIdAndUpdate(studentId,{age:age}) 
+console.log("updatedStudents",student)
      res.status(200)
         .json({
             sucess: true,

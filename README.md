@@ -98,3 +98,10 @@ find({name: req.body.name})
 task:
 attendance
 frondend and backend connect
+
+Day-9
+7/10/2025
+task
+
+1.updateMany({})
+1.findByIdAndDelete(id)
