@@ -110,3 +110,16 @@ Day-10
 Day-11
 11/10/2025
 req -->  head, body 
+
+
+JWT
+FILE UPLOAD
+INTEGRATION REACT + NODE
+
+in project
+Advanced topics to you cover
+1. sorting
+2. filter
+3. pagination
+4. search -- query 
+
