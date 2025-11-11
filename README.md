@@ -102,6 +102,11 @@ frondend and backend connect
 Day-9
 7/10/2025
 task
-
+Day-10
+10/10/2025
 1.updateMany({})
-1.findByIdAndDelete(id)
+2.findByIdAndDelete(id)
+
+Day-11
+11/10/2025
+req -->  head, body 
