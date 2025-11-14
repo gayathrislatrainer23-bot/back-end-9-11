@@ -1,6 +1,6 @@
 const Student = require("../models/student")
 const bcrypt = require('bcrypt');
-
+const jwt  = require("jsonwebtoken")
 // const jwt =  require('jsonwebtoken')
 // Register
 exports.register = async(req,res,next) =>{
@@ -63,8 +63,19 @@ res.status(400).json({
         message: "invalid password"
      })
 
+     const token =jwt.sign(
+      {
+            email : existingStudent.email
+      },
+      "secret",
+      {expiresIn : "2h"}
+     )
+
+
+
 res.status(200).json({
-    message:" login sucessful"
+    message:" login sucessful",
+    token
 })
 }
 }catch(err){

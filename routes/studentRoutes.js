@@ -6,7 +6,7 @@ console.log("routes")
 //create
 // router.post("/create_students", studentController.createStudents)
 //  get all students
-router.get("/get_all_students", studentController.getStudents)
+router.get("/get_all_students" ,studentController.getStudents)
 
 // find by id
 router.get("/get_students_by_id/:_id", studentController.getStudentById)
